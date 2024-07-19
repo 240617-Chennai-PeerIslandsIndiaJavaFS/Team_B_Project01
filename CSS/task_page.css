@@ -1,0 +1,18 @@
+
+body{
+  background: linear-gradient(to right, #d172ee, #0072ff);
+
+}
+
+.card{
+  height: 700px;
+  margin-top: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+.btn-primary {
+  margin-top: auto;
+}
