@@ -272,7 +272,7 @@ document
           window.location.href = "./html/project_manager.html";
           break;
         case "TEAM_MEMBER":
-          window.location.href = "./html/team_member.html";
+          window.location.href = "./team_member.html";
           break;
         default:
           break;
