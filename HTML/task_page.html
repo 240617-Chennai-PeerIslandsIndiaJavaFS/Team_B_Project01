@@ -22,106 +22,184 @@
           </div>
         </div>
       </div>
-        <div class="col-lg-3 col-md-6 col-s-12">
-          <div class="card" style="width: 18rem">
-            <img src="../MEDIA/project_details.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Project Details</h5>
-              <p class="card-text">
-                Explore detailed project profiles, including essential descriptions, milestones, and additional information.
+      <div class="col-lg-3 col-md-6 col-s-12">
+        <div class="card" style="width: 18rem">
+          <img src="../MEDIA/project_details.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Project Details</h5>
+            <p class="card-text">
+              Explore detailed project profiles, including essential descriptions, milestones, and additional information.
+            </p>
+            <a href="#" id="viewProjectDetails" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectDetailsModal">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-s-12">
+        <div class="card" style="width: 18rem">
+          <img src="../MEDIA/client_details.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Client Details</h5>
+            <p class="card-text">
+              Explore detailed client profiles, including essential contact information and more.
+            </p>
+            <a href="#" id="viewClientDetails" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clientDetailsModal">View</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-s-12">
+        <div class="card" style="width: 18rem">
+          <img src="../MEDIA/update_task_status.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Update Task Status</h5>
+            <p class="card-text">
+              Update the status of your tasks, ensuring accurate tracking and efficient management of your work progress.
+            </p>
+            <a href="#" class="btn btn-primary">Update</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Task Details Modal -->
+  <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Task ID:</strong> <span id="taskId"></span></p>
+          <p><strong>Task Name:</strong> <span id="taskName"></span></p>
+          <p><strong>Task Description:</strong> <span id="taskDescription"></span></p>
+          <p><strong>Start Date:</strong> <span id="taskStartDate"></span></p>
+          <p><strong>End Date:</strong> <span id="taskEndDate"></span></p>
+          <p><strong>Status:</strong> <span id="taskStatus"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                        </p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
+  <!-- Project Details Modal -->
+  <div class="modal fade" id="projectDetailsModal" tabindex="-1" aria-labelledby="projectDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectDetailsModalLabel">Project Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="col-lg-3 col-md-6 col-s-12">
-          <div class="card" style="width: 18rem">
-            <img src="../MEDIA/client_details.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Client Details</h5>
-              <p class="card-text">
-                Explore detailed client profiles, including essential contact information and more.
-            
-              </p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
+        <div class="modal-body">
+          <p><strong>Project ID:</strong> <span id="projectId"></span></p>
+          <p><strong>Project Name:</strong> <span id="projectName"></span></p>
+          <p><strong>Project Description:</strong> <span id="projectDescription"></span></p>
         </div>
-        <div class="col-lg-3 col-md-6 col-s-12">
-          <div class="card" style="width: 18rem">
-            <img src="../MEDIA/update_task_status.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Update Task Status</h5>
-              <p class="card-text">
-                Update the status of your tasks, ensuring accurate tracking and efficient management of your work progress.              </p>
-              <a href="#" class="btn btn-primary">Update</a>
-            </div>
-          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
-        <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p><strong>Task ID:</strong> <span id="taskId"></span></p>
-                <p><strong>Task Name:</strong> <span id="taskName"></span></p>
-                <p><strong>Task Description:</strong> <span id="taskDescription"></span></p>
-                <p><strong>Start Date:</strong> <span id="taskStartDate"></span></p>
-                <p><strong>End Date:</strong> <span id="taskEndDate"></span></p>
-                <p><strong>Status:</strong> <span id="taskStatus"></span></p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Client Details Modal -->
+  <div class="modal fade" id="clientDetailsModal" tabindex="-1" aria-labelledby="clientDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="clientDetailsModalLabel">Client Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      
-      
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="login.js"></script>
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const taskId = parseInt(urlParams.get('task_id'), 10);
-      
-            const user = JSON.parse(localStorage.getItem('loggedInUser'));
-            if (user) {
-              let task;
-              user.projects.forEach(project => {
-                project.tasks.forEach(t => {
-                  if (t.task_id === taskId) {
-                    task = t;
-                  }
-                });
-              });
-      
-              if (task) {
-                document.getElementById("taskId").textContent = task.task_id;
-                document.getElementById("taskName").textContent = task.task_name;
-                document.getElementById("taskDescription").textContent = task.task_description;
-                document.getElementById("taskStartDate").textContent = task.start_date;
-                document.getElementById("taskEndDate").textContent = task.end_date;
-                document.getElementById("taskStatus").textContent = task.status;
-              }
+        <div class="modal-body">
+          <p><strong>Client Name:</strong> <span id="clientName"></span></p>
+          <p><strong>Client Address:</strong> <span id="clientAddress"></span></p>
+          <p><strong>Client Email:</strong> <span id="clientEmail"></span></p>
+          <p><strong>Client Phone:</strong> <span id="clientPhone"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="login.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const taskId = parseInt(urlParams.get('task_id'), 10);
+
+      const user = JSON.parse(localStorage.getItem('loggedInUser'));
+      if (user) {
+        let task;
+        user.projects.forEach(project => {
+          project.tasks.forEach(t => {
+            if (t.task_id === taskId) {
+              task = t;
             }
-      
-            const viewTaskDetailsButton = document.getElementById("viewTaskDetails");
-            viewTaskDetailsButton.addEventListener("click", function () {
-              const taskDetailsModal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
-              taskDetailsModal.show();
-            });
-            const taskDetailsModalElement = document.getElementById('taskDetailsModal');
+          });
+        });
+
+        if (task) {
+          document.getElementById("taskId").textContent = task.task_id;
+          document.getElementById("taskName").textContent = task.task_name;
+          document.getElementById("taskDescription").textContent = task.task_description;
+          document.getElementById("taskStartDate").textContent = task.start_date;
+          document.getElementById("taskEndDate").textContent = task.end_date;
+          document.getElementById("taskStatus").textContent = task.status;
+        }
+      }
+
+      const viewTaskDetailsButton = document.getElementById("viewTaskDetails");
+      viewTaskDetailsButton.addEventListener("click", function () {
+        const taskDetailsModal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
+        taskDetailsModal.show();
+      });
+
+      const viewProjectDetailsButton = document.getElementById("viewProjectDetails");
+      viewProjectDetailsButton.addEventListener("click", function () {
+        const project = user.projects[0]; 
+
+        document.getElementById("projectId").textContent = project.project_id;
+        document.getElementById("projectName").textContent = project.project_name;
+        document.getElementById("projectDescription").textContent = project.project_description;
+
+        const projectDetailsModal = new bootstrap.Modal(document.getElementById('projectDetailsModal'));
+        projectDetailsModal.show();
+      });
+
+      const viewClientDetailsButton = document.getElementById("viewClientDetails");
+      viewClientDetailsButton.addEventListener("click", function () {
+        const client = user.projects[0]; 
+
+        document.getElementById("clientName").textContent = client.client;
+        document.getElementById("clientAddress").textContent = client.client_address;
+        document.getElementById("clientEmail").textContent = client.client_email;
+        document.getElementById("clientPhone").textContent = client.client_contact_number;
+
+        const clientDetailsModal = new bootstrap.Modal(document.getElementById('clientDetailsModal'));
+        clientDetailsModal.show();
+      });
+
+      // Ensure the modal backdrop is removed when the modal is hidden
+      const taskDetailsModalElement = document.getElementById('taskDetailsModal');
       taskDetailsModalElement.addEventListener('hidden.bs.modal', function () {
         document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
       });
-          });
 
-        </script>
-      </body>
-      </html>
+      const projectDetailsModalElement = document.getElementById('projectDetailsModal');
+      projectDetailsModalElement.addEventListener('hidden.bs.modal', function () {
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+      });
+
+      const clientDetailsModalElement = document.getElementById('clientDetailsModal');
+      clientDetailsModalElement.addEventListener('hidden.bs.modal', function () {
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+      });
+    });
+  </script>
+</body>
+</html>
