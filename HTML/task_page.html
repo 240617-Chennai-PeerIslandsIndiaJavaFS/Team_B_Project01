@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link href="../CSS/task_page.css" rel="stylesheet"/>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-s-12">
-          <div class="card" style="width: 18rem">
-            <img src="../MEDIA/task_details.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Task Details</h5>
-              <p class="card-text">
-                Explore detailed task profiles, including essential descriptions, status updates, and additional relevant information, to stay informed and effectively manage your tasks.              </p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="../CSS/task_page.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-s-12">
+        <div class="card" style="width: 18rem">
+          <img src="../MEDIA/task_details.jpeg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Task Details</h5>
+            <p class="card-text">
+              Explore detailed task profiles, including essential descriptions, status updates, and additional relevant information, to stay informed and effectively manage your tasks.
+            </p>
+            <a href="#" id="viewTaskDetails" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#taskDetailsModal">View</a>
           </div>
         </div>
+      </div>
         <div class="col-lg-3 col-md-6 col-s-12">
           <div class="card" style="width: 18rem">
             <img src="../MEDIA/project_details.jpg" class="card-img-top" alt="..." />
@@ -64,14 +60,68 @@
             </div>
           </div>
         </div>
-        
+        <div class="modal fade" id="taskDetailsModal" tabindex="-1" aria-labelledby="taskDetailsModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="taskDetailsModalLabel">Task Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p><strong>Task ID:</strong> <span id="taskId"></span></p>
+                <p><strong>Task Name:</strong> <span id="taskName"></span></p>
+                <p><strong>Task Description:</strong> <span id="taskDescription"></span></p>
+                <p><strong>Start Date:</strong> <span id="taskStartDate"></span></p>
+                <p><strong>End Date:</strong> <span id="taskEndDate"></span></p>
+                <p><strong>Status:</strong> <span id="taskStatus"></span></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="login.js"></script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const taskId = parseInt(urlParams.get('task_id'), 10);
+      
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+            if (user) {
+              let task;
+              user.projects.forEach(project => {
+                project.tasks.forEach(t => {
+                  if (t.task_id === taskId) {
+                    task = t;
+                  }
+                });
+              });
+      
+              if (task) {
+                document.getElementById("taskId").textContent = task.task_id;
+                document.getElementById("taskName").textContent = task.task_name;
+                document.getElementById("taskDescription").textContent = task.task_description;
+                document.getElementById("taskStartDate").textContent = task.start_date;
+                document.getElementById("taskEndDate").textContent = task.end_date;
+                document.getElementById("taskStatus").textContent = task.status;
+              }
+            }
+      
+            const viewTaskDetailsButton = document.getElementById("viewTaskDetails");
+            viewTaskDetailsButton.addEventListener("click", function () {
+              const taskDetailsModal = new bootstrap.Modal(document.getElementById('taskDetailsModal'));
+              taskDetailsModal.show();
+            });
+            const taskDetailsModalElement = document.getElementById('taskDetailsModal');
+      taskDetailsModalElement.addEventListener('hidden.bs.modal', function () {
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+      });
+          });
 
-      </div>
-    </div>
-  </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"
-  ></script>
-</html>
+        </script>
+      </body>
+      </html>
