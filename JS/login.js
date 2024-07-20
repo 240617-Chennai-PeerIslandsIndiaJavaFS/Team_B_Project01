@@ -15,6 +15,10 @@ const users = [
         project_id: 1,
         project_name: "Backend Revamp",
         client: "Acme Corp",
+        project_description: "Revamp the backend system to improve performance and scalability.",
+        client_contact_number: "+1234567890",
+        client_email: "contact@acmecorp.com",
+        client_address: "123 Acme St, Springfield, USA",
         tasks: [
           {
             task_id: 1,
@@ -52,6 +56,10 @@ const users = [
         project_id: 2,
         project_name: "Website Redesign",
         client: "Beta LLC",
+        project_description: "Redesign the company website to enhance user experience and accessibility.",
+        client_contact_number: "+0987654321",
+        client_email: "info@betallc.com",
+        client_address: "456 Beta Ave, Metropolis, USA",
         tasks: [
           {
             task_id: 3,
@@ -89,6 +97,10 @@ const users = [
         project_id: 3,
         project_name: "Mobile App Testing",
         client: "Gamma Inc",
+        project_description: "Test the mobile application to ensure it meets quality standards.",
+        client_contact_number: "+1122334455",
+        client_email: "support@gammainc.com",
+        client_address: "789 Gamma Blvd, Gotham, USA",
         tasks: [
           {
             task_id: 5,
@@ -126,6 +138,10 @@ const users = [
         project_id: 4,
         project_name: "E-commerce Frontend",
         client: "Delta Co",
+        project_description: "Develop the frontend for the e-commerce platform.",
+        client_contact_number: "+2233445566",
+        client_email: "contact@deltaco.com",
+        client_address: "101 Delta Rd, Star City, USA",
         tasks: [
           {
             task_id: 7,
@@ -163,6 +179,10 @@ const users = [
         project_id: 5,
         project_name: "CI/CD Pipeline",
         client: "Epsilon Ltd",
+        project_description: "Implement a CI/CD pipeline to automate the software delivery process.",
+        client_contact_number: "+3344556677",
+        client_email: "devops@epsilonltd.com",
+        client_address: "202 Epsilon St, Central City, USA",
         tasks: [
           {
             task_id: 9,
@@ -200,6 +220,10 @@ const users = [
         project_id: 6,
         project_name: "New Dashboard UI",
         client: "Zeta Corp",
+        project_description: "Design and develop a new user interface for the dashboard.",
+        client_contact_number: "+4455667788",
+        client_email: "design@zetacorp.com",
+        client_address: "303 Zeta Ln, Coast City, USA",
         tasks: [
           {
             task_id: 11,
@@ -221,7 +245,7 @@ const users = [
       },
     ],
   },
-];
+]; 
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   const table = document.getElementById("userTable");
