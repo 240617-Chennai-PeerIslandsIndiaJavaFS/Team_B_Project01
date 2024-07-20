@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Member Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        body {
-            background: linear-gradient(to right, #d172ee, #0072ff);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Member Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #d172ee, #0072ff);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 id="welcome-message" class="mt-5">Welcome, Team Member!</h1>
-        <h2 class="mt-3">Your Tasks</h2>
-        <ul id="task-list" class="list-group mt-3"></ul>
-    </div>
-
-    <script>
-        const user = JSON.parse(localStorage.getItem('loggedInUser'));
-
-        if (user && user.user_role === 'TEAM_MEMBER') {
-            const welcomeMessage = document.getElementById('welcome-message');
-            welcomeMessage.textContent = `Welcome, ${user.user_name}!`;
-
-            const taskList = document.getElementById('task-list');
-            user.projects.forEach(project => {
-                project.tasks.forEach(task => {
-                    const listItem = document.createElement('li');
-                    listItem.className = 'list-group-item';
-
-                    const taskLink = document.createElement('a');
-                    taskLink.href = 'task_page.html';
-                    taskLink.textContent = task.task_name;
-                    taskLink.className = 'task-link';
-
-                    listItem.appendChild(taskLink);
-                    taskList.appendChild(listItem);
-                });
-            });
-        } 
-    </script>
+  <div class="container">
+    <h1 id="welcome-message" class="mt-5">Welcome, Team Member!</h1>
+    <h2 class="mt-3">Your Tasks</h2>
+    <ul id="task-list" class="list-group mt-3"></ul>
+  </div>
+  <script>
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (user && user.user_role === 'TEAM_MEMBER') {
+      const welcomeMessage = document.getElementById('welcome-message');
+      welcomeMessage.textContent = `Welcome, ${user.user_name}!`;
+      const taskList = document.getElementById('task-list');
+      user.projects.forEach(project => {
+        project.tasks.forEach(task => {
+          const listItem = document.createElement('li');
+          listItem.className = 'list-group-item';
+          const taskLink = document.createElement('a');
+          taskLink.href = `task_page.html?task_id=${task.task_id}`;
+          taskLink.textContent = task.task_name;
+          taskLink.className = 'task-link';
+          listItem.appendChild(taskLink);
+          taskList.appendChild(listItem);
+        });
+      });
+    } else {
+      // Redirect to login page if user is not logged in or not a team member
+      window.location.href = 'login.html';
+    }
+  </script>
 </body>
 </html>
