@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Menu</title>
+    <link rel="stylesheet" href="../CSS/ProjectMenu.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div>
+        <h1>Welcome to the Project!</h1>
+        <p style="color: #f9f9f9">Choose an action:</p>
+        <a onclick="loadContent('ViewProjectClientDetails.html')" href="javascript:void(0)"
+          >View Project Client Details</a
+        >
+        <a onclick="loadContent('AddTeamMemberToProject.html')" href="javascript:void(0)"
+          >Add Team Member To Project</a
+        >
+        <a
+          onclick="loadContent('RemoveTeamMemberFromProject.html')"
+          href="javascript:void(0)"
+          >Remove Team Member From Project</a
+        >
+        <a onclick="loadContent('AssigntasktoTeamMember.html')" href="javascript:void(0)"
+          >Assign task to Team Member </a
+        >
+        <a onclick="loadContent('UpdateTask.html')" href="javascript:void(0)"
+          >Update Task</a
+        >
+        <a onclick="loadContent('DeleteTask.html')" href="javascript:void(0)"
+          >Delete Task</a
+        >
+        <a onclick="loadContent('ViewTaskDetails.html')" href="javascript:void(0)"
+          >View Task Details</a
+        >
+        
+      </div>
+      <a class="btn-primary" href="../HTML/ProjectManagerMenu.html">Go Back</a>
+    </div>
+    <div class="content" id="content">
+      <iframe id="contentFrame" src=""></iframe>
+    </div>
+
+    <script>
+      function loadContent(src) {
+        document.getElementById("contentFrame").src = src;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Team Member</title>
+    <link rel="stylesheet" href="../css/Common.css" />
+  </head>
+  <body>
+    <div id="createUserForm" class="form-container">
+      <h2>Remove Team Member</h2>
+      <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option value="">Select Role</option>
+          
+          <option value="TEAM_MEMBER">TEAM_MEMBER</option></select
+        ><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br />
+
+    
+
+        
+
+        <button type="button" onclick="validateAndSubmitForm()">
+          Remove User
+        </button>
+      </form>
+    </div>
+  </body>
+  
+</html>
